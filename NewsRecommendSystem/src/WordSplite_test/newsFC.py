@@ -12,7 +12,7 @@ import Get_news_rate
 import MySQLdb as mdb
 from numpy.lib.financial import rate
 
-# 相关新闻推荐
+# 相关新闻推荐,保存到数据库中
 def recommendSimilarNews(newsID,news_to_tags,news_to_rates):
     tmpTags = news_to_tags[newsID]
     recommendNews = {}
@@ -27,42 +27,45 @@ def recommendSimilarNews(newsID,news_to_tags,news_to_rates):
     recommendNews = sorted(recommendNews.items(), key = lambda x:x[1] , reverse=True)
     recommendList = []
     relatedNews = ""
+    # 推荐新闻条数
     count = 0
     for news in recommendNews:
         recommendList.append(news[0]) 
         relatedNews = relatedNews + news[0] + '\t'
         count += 1
-        if count>=10:
+        if count>=20:
             break
-    return recommendList,relatedNews
-
-news_to_rates = Get_news_rate.get_news_rate()
-news_to_tags = userFC.Get_newsTag()
-newsID = "100648915"
-recommendList,txt = recommendSimilarNews(newsID, news_to_tags, news_to_rates) 
-value = [newsID,txt]
-
-config = {
+        
+    value = [newsID,relatedNews]
+    config = {
     'host': '127.0.0.1',
     'port': 3306,
     'user': 'root',
     'passwd': 'syw961018',
     'db': 'newsapp',
     'charset': 'utf8'
-}
-conn = mdb.connect(**config)
-cursor = conn.cursor()
+    }
+    conn = mdb.connect(**config)
+    cursor = conn.cursor()
 
-try:
-    cursor.execute('INSERT INTO relatednews values(%s,%s)',value)
-    conn.commit()
-except:
-    import traceback
-    traceback.print_exc()
-    # 发生错误时会滚
-    conn.rollback()
-finally:
-    # 关闭游标连接
-    cursor.close()
-    # 关闭数据库连接
-    conn.close()
+    try:
+        cursor.execute('INSERT INTO relatednews values(%s,%s)',value)
+        conn.commit()
+    except:
+        import traceback
+        traceback.print_exc()
+        # 发生错误时会滚
+        conn.rollback()
+    finally:
+        # 关闭游标连接
+        cursor.close()
+        # 关闭数据库连接
+        conn.close()
+    
+    return recommendList,relatedNews
+
+news_to_rates = Get_news_rate.get_news_rate()
+news_to_tags = userFC.Get_newsTag()
+newsID = "100651304"
+recommendList,txt = recommendSimilarNews(newsID, news_to_tags, news_to_rates) 
+

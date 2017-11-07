@@ -58,7 +58,7 @@ def get_news_rate():
     cursor = conn.cursor()
 
     try:
-        sql = "SELECT * FROM allnews"
+        sql = "SELECT * FROM newsrate"
         cursor.execute(sql)
         results = cursor.fetchall()
         for row in results:
