@@ -76,7 +76,7 @@ def recommendNews():
                     txt = news[i] + '\t'
             value = [userID,txt]
             cursor.execute('INSERT INTO userRN values(%s,%s)',value)
-                                         
+            conn.commit()                             
     except:
         import traceback
         traceback.print_exc()
