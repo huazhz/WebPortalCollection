@@ -4,7 +4,6 @@ Created on 2017年10月15日
 @author: SunYawei
 '''
 import math
-import Global_param
 from numpy.lib.financial import rate
 
 #   计算用户相似相关性

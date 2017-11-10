@@ -36,6 +36,17 @@ def recommendSimilarNews(newsID,news_to_tags,news_to_rates):
     return relatedNews
 
 
+# relatedNews:本新闻相关新闻id集合字符串
+# userRecord:该用户今日已读新闻id集合数组
+def userGetSN(relatedNews,userRecord):
+    relatedNews = relatedNews.split('\t')
+    recommendlist = []
+    for news in relatedNews:
+        if news not in userRecord:
+            recommendlist.append(news)
+    return recommendlist
+
+
 news_to_rates = {"1":23}
 news_to_tags = {"1":['iphone','手机']}
 newsID = "100651304"
