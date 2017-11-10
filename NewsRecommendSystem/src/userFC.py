@@ -162,7 +162,7 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
         mixedRecommend = recommend_list_byUser + recommend_list_byTag[0:40-length]
         return mixedRecommend
 
-
+'''
 def oldUserRN(userInfo,user_to_rate,key_to_user,user_to_key,user_to_news,all_news):
     userNews = {}
     for userID,info in userInfo.items():
@@ -172,7 +172,7 @@ def oldUserRN(userInfo,user_to_rate,key_to_user,user_to_key,user_to_news,all_new
         recommendNews = recommendByUserFC(userID,user_to_rate,key_to_user,user_to_key,user_to_news,all_news)
         userNews[userID] = recommendNews
     return userNews  
-    
+'''    
 
 userID = "5218791"
 user_KeytoRate = {"5218791":[['马航',3],['马云',10],['彩虹六号',8]]}
