@@ -42,7 +42,7 @@ def addUserTags(userTags,dayRecords):
             newslist += title + ','
         jieba.analyse.set_stop_words('D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt')
         dayTags = jieba.analyse.extract_tags(newslist,5)
-        words = list(psg.cut(newslist))
+        words = list(jieba.cut(newslist))
         oldTags_rate = userTags[userID]
         oldTags = []
         newTags = []
