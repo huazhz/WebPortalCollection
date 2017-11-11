@@ -126,7 +126,9 @@ def dropSimilarNews(source1,source2):
                 
     return mergedList
 
+'''
 source1 = {"1":["美国第一夫人登上长城 获赠“好汉证”",400],"2":["美俄互指对方违反《中导条约 分析：或陷入新冷战",500]}   
 source2 = {"3":["美俄再次互怼 指对方违反《中导条约》",200],"4":["美第一夫人登长城顺利拿下“好汉证”",300]}
 list = dropSimilarNews(source1, source2)
 print(list)  
+'''
