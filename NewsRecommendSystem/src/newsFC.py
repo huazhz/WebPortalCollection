@@ -46,9 +46,9 @@ def userGetSN(relatedNews,userRecord):
             recommendlist.append(news)
     return recommendlist
 
-'''
-news_to_rates = {"1":23}
-news_to_tags = {"1":['iphone','手机']}
-newsID = "100651304"
-recommendList,txt = recommendSimilarNews(newsID, news_to_tags, news_to_rates) 
-'''
+if __name__ == '__main__' :
+    news_to_rates = {"1":23}
+    news_to_tags = {"1":['iphone','手机']}
+    newsID = "100651304"
+    recommendList,txt = recommendSimilarNews(newsID, news_to_tags, news_to_rates) 
+

@@ -52,17 +52,17 @@ def recommendNews(news_rate,news_kind,user_kind,user_TagtoRate,tag_user,user_tag
     # 返回字典：userID:[newsID1,newsID2,...]        
     return user_news
 
-'''
-news_rate = {'1':13,'2':24,'3':22,'4':36}
-news_kind = {'1':"政治",'2':"军事",'3':"政治",'4':"科技"}
-user_kind = {'1150310718':["政治","科技"],'1150310721':["政治","军事"]}
-user_TagtoRate = {'1150310718':[],'1150310721':[]}
-tag_user = {}
-user_tag = {'1150310718':[],'1150310721':[]}
-userRecord = {'1150310718':['3'],'1150310721':[]}
-news_tag = {'1':['new','egg'],'2':[],'3':[],'4':[]}
+if __name__ == '__main__' :
+    news_rate = {'1':13,'2':24,'3':22,'4':36}
+    news_kind = {'1':"政治",'2':"军事",'3':"政治",'4':"科技"}
+    user_kind = {'1150310718':["政治","科技"],'1150310721':["政治","军事"]}
+    user_TagtoRate = {'1150310718':[],'1150310721':[]}
+    tag_user = {}
+    user_tag = {'1150310718':[],'1150310721':[]}
+    userRecord = {'1150310718':['3'],'1150310721':[]}
+    news_tag = {'1':['new','egg'],'2':[],'3':[],'4':[]}
 
-userNews = recommendNews(news_rate,news_kind,user_kind,user_TagtoRate,tag_user,user_tag,userRecord,news_tag)
-print(userNews)
-'''
+    userNews = recommendNews(news_rate,news_kind,user_kind,user_TagtoRate,tag_user,user_tag,userRecord,news_tag)
+    print(userNews)
+
     

@@ -162,15 +162,15 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
         mixedRecommend = recommend_list_byUser + recommend_list_byTag[0:40-length]
         return mixedRecommend
 
-'''
-userID = "5218791"
-user_KeytoRate = {"5218791":[['马航',3],['马云',10],['彩虹六号',8]]}
-user_to_news = {"5218791":['1','2','3']}
-user_keys = {"5218791":['马航','马云','彩虹六号']}
-key_users = {'马航':"5218791"}
-news_to_tags = {"1":['iphone','手机']}
-recommendNews_byUser,recommendNews_byTag = recommendByUserFC(userID,user_KeytoRate,key_users,user_keys,user_to_news,news_to_tags)
-print(recommendNews_byUser)
-print(recommendNews_byTag)
-'''
+if __name__ == '__main__' :
+    userID = "5218791"
+    user_KeytoRate = {"5218791":[['马航',3],['马云',10],['彩虹六号',8]]}
+    user_to_news = {"5218791":['1','2','3']}
+    user_keys = {"5218791":['马航','马云','彩虹六号']}
+    key_users = {'马航':"5218791"}
+    news_to_tags = {"1":['iphone','手机']}
+    recommendNews_byUser,recommendNews_byTag = recommendByUserFC(userID,user_KeytoRate,key_users,user_keys,user_to_news,news_to_tags)
+    print(recommendNews_byUser)
+    print(recommendNews_byTag)
+
 

@@ -21,7 +21,7 @@ def get_NewsRate(allnews):
         newsTime = [int(date[0]),int(date[1]),int(date[2]),int(h[0]),int(h[1])]   
         # 获取时间差         
         timediff = get_Timediff(newsTime, timeBase)
-        score = num/100 + timediff/45000
+        score = num/10000 + timediff/3600
         newsRate[newsID] = score
     
     return newsRate   
@@ -38,3 +38,7 @@ def get_Timediff(t1, t2):
     else:
         diff = s + d*3600*24
     return diff
+
+if __name__ == '__main__' :
+    allnews = {'1':[10000,"2017-11-12 13:38"],'2':[100000,"2017-11-9 12:11"],'3':[40000,"2017-11-12 10:13"]}
+    print(get_NewsRate(allnews))
