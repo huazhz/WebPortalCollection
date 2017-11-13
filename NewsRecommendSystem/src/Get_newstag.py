@@ -8,7 +8,7 @@ import jieba.analyse
 import jieba.posseg as pseg
 
 # allnews:{newsID:title}
-def mysql_newstag(allnews,path):
+def get_newstag(allnews,path):
     newsTags = {}
     for newsID,title in allnews.items():
         tags = ''
@@ -23,11 +23,32 @@ def mysql_newstag(allnews,path):
                 newT.append(tag)
         for key in newT:
             tags = tags + key + '\t'
-        newsTags[newsID] = tags
+        newsTags[newsID] = newT
     return newsTags
+
+def get_SearchTags(allnews):
+    searchTags = {}
+    for newsID,title in allnews.items():
+        t = jieba.cut_for_search(title)
+        searchTags[newsID] = []
+        for tag in t:
+            searchTags[newsID].append(tag)
+    return searchTags
+    
+
+def getTags(title,path):
+    jieba.analyse.set_stop_words(path)
+    seg = jieba.analyse.extract_tags(title,5)
+    fr = open(path,encoding='utf-8')
+    stopw = [line.strip() for line in fr.readlines()]
+    shingles = set(seg) - set(stopw) - set(" ")
+    return shingles
 
 if __name__ == '__main__' :
     path = 'D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt'
     allnews = {'1':'习近平APEC工商领导人峰会讲话引热烈反响'}
-    print(mysql_newstag(allnews,path)['1']) 
+    title = '习近平APEC工商领导人峰会讲话引热烈反响'
+    print(get_newstag(allnews,path)['1']) 
+    print(getTags(title,path))
+    print(get_SearchTags(allnews))
                

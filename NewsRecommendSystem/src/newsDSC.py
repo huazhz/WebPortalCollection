@@ -12,7 +12,6 @@ import jieba.analyse
 def get_shingles(title,path):
     jieba.analyse.set_stop_words(path)
     seg = jieba.analyse.extract_tags(title,5)
-    #seg = list(jieba.cut(title))
     fr = open(path,encoding='utf-8')
     stopw = [line.strip() for line in fr.readlines()]
     shingles = set(seg) - set(stopw) - set(" ")
@@ -20,8 +19,10 @@ def get_shingles(title,path):
 
 
 def cal_similar_degree(title0, title1, path):
-    shingles0 = get_shingles(title0,path)#计算doc的shingles
-    shingles1 = get_shingles(title1,path)
+    shingles0 = title0
+    shingles1 = title1
+    #shingles0 = get_shingles(title0,path)
+    #shingles1 = get_shingles(title1,path)
     #求shingles0,shingles1的并集
     shingles01_or = list(shingles0 | shingles1)
     #shingles01_or = set_or(shingles0, shingles1)

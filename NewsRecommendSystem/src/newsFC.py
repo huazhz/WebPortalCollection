@@ -33,8 +33,8 @@ def recommendSimilarNews(newsID,news_to_tags,news_to_rates):
         count += 1
         if count>=20:
             break
-    #返回相关新闻ID集合字符串
-    return relatedNews
+    #返回相关新闻ID集合
+    return recommendList[0:20]
 
 
 # relatedNews:本新闻相关新闻id集合字符串
@@ -48,8 +48,9 @@ def userGetSN(relatedNews,userRecord):
     return recommendlist
 
 if __name__ == '__main__' :
-    news_to_rates = {"1":23}
-    news_to_tags = {"1":['iphone','手机']}
-    newsID = "100651304"
-    recommendList,txt = recommendSimilarNews(newsID, news_to_tags, news_to_rates) 
+    news_to_rates = {"N1":23,"N2":12}
+    news_to_tags = {"N1":['iphone','手机'],"N2":['手机','游戏']}
+    newsID = "N1"
+    recommendList = recommendSimilarNews(newsID, news_to_tags, news_to_rates) 
+    print(recommendList)
 

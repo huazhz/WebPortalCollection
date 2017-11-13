@@ -18,7 +18,7 @@ def recommendNews(news_rate,news_kind,user_kind,user_TagtoRate,tag_user,user_tag
             recommend_News[kind] = []
             
         # 新用户关键词过少，利用种类推荐           
-        if len(tags)<20:
+        if len(tags)<20 and len(kinds)!=0:
             for news,kind in news_kind.items():
                 if kind in kinds and news not in userRecord[userID]:
                     recommend_News[kind] += news                    

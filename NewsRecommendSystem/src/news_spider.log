@@ -1,0 +1,449 @@
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 676	--	共获取新闻总数 676
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 676	--	共获取新闻总数 676
+Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 330, in start
+    print("汇总新闻总数："+len(allNews))
+TypeError: must be str, not int
+	--	Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 330, in start
+    print("汇总新闻总数："+len(allNews))
+TypeError: must be str, not int
+
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 679	--	共获取新闻总数 679
+Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 331, in start
+    s1Tags = get_newstag(source1, path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\Get_newstag.py", line 17, in get_newstag
+    t = jieba.analyse.extract_tags(title,4)
+  File "C:\Users\jerry\AppData\Local\Programs\Python\Python36\lib\site-packages\jieba\analyse\tfidf.py", line 94, in extract_tags
+    for w in words:
+  File "C:\Users\jerry\AppData\Local\Programs\Python\Python36\lib\site-packages\jieba\__init__.py", line 282, in cut
+    sentence = strdecode(sentence)
+  File "C:\Users\jerry\AppData\Local\Programs\Python\Python36\lib\site-packages\jieba\_compat.py", line 37, in strdecode
+    sentence = sentence.decode('utf-8')
+AttributeError: 'list' object has no attribute 'decode'
+	--	Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 331, in start
+    s1Tags = get_newstag(source1, path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\Get_newstag.py", line 17, in get_newstag
+    t = jieba.analyse.extract_tags(title,4)
+  File "C:\Users\jerry\AppData\Local\Programs\Python\Python36\lib\site-packages\jieba\analyse\tfidf.py", line 94, in extract_tags
+    for w in words:
+  File "C:\Users\jerry\AppData\Local\Programs\Python\Python36\lib\site-packages\jieba\__init__.py", line 282, in cut
+    sentence = strdecode(sentence)
+  File "C:\Users\jerry\AppData\Local\Programs\Python\Python36\lib\site-packages\jieba\_compat.py", line 37, in strdecode
+    sentence = sentence.decode('utf-8')
+AttributeError: 'list' object has no attribute 'decode'
+
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 679	--	共获取新闻总数 679
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 679	--	共获取新闻总数 679
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 679	--	共获取新闻总数 679
+Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 334, in start
+    allNews = mergeAllSources(source,path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\newsDSC.py", line 131, in mergeAllSources
+    merge1 = dropSimilarNews(source[0],source[1],path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\newsDSC.py", line 106, in dropSimilarNews
+    similar = cal_similar_degree(title1,title2,path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\newsDSC.py", line 27, in cal_similar_degree
+    shingles01_or = list(shingles0 | shingles1)
+TypeError: unsupported operand type(s) for |: 'list' and 'list'
+	--	Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 334, in start
+    allNews = mergeAllSources(source,path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\newsDSC.py", line 131, in mergeAllSources
+    merge1 = dropSimilarNews(source[0],source[1],path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\newsDSC.py", line 106, in dropSimilarNews
+    similar = cal_similar_degree(title1,title2,path)
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\newsDSC.py", line 27, in cal_similar_degree
+    shingles01_or = list(shingles0 | shingles1)
+TypeError: unsupported operand type(s) for |: 'list' and 'list'
+
+开始爬取凤凰网	--	开始爬取凤凰网
+start to fetch http://news.ifeng.com/hotnews/	--	start to fetch http://news.ifeng.com/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 军事 分类新闻	--	获取 军事 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+爬取凤凰网完毕，储存于 fenghuang.rec 内	--	爬取凤凰网完毕，储存于 fenghuang.rec 内
+开始爬取腾讯网	--	开始爬取腾讯网
+start to fetch http://news.qq.com/articleList/ranking/	--	start to fetch http://news.qq.com/articleList/ranking/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 时政 分类新闻	--	获取 时政 分类新闻
+获取 国际 分类新闻	--	获取 国际 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 游戏 分类新闻	--	获取 游戏 分类新闻
+获取 社会 分类新闻	--	获取 社会 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+获取 旅游 分类新闻	--	获取 旅游 分类新闻
+爬取腾讯网完毕，储存于 tengxun.rec 内	--	爬取腾讯网完毕，储存于 tengxun.rec 内
+开始爬取网易网	--	开始爬取网易网
+start to fetch http://news.163.com/rank/	--	start to fetch http://news.163.com/rank/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+获取 体育 分类新闻	--	获取 体育 分类新闻
+获取 财经 分类新闻	--	获取 财经 分类新闻
+获取 科技 分类新闻	--	获取 科技 分类新闻
+获取 汽车 分类新闻	--	获取 汽车 分类新闻
+获取 时尚 分类新闻	--	获取 时尚 分类新闻
+获取 房产 分类新闻	--	获取 房产 分类新闻
+获取 教育 分类新闻	--	获取 教育 分类新闻
+爬取网易网完毕，储存于 wangyi.rec 内	--	爬取网易网完毕，储存于 wangyi.rec 内
+开始爬取新浪网	--	开始爬取新浪网
+start to fetch http://news.sina.com.cn/hotnews/	--	start to fetch http://news.sina.com.cn/hotnews/
+获取 资讯 分类新闻	--	获取 资讯 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_china_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 国际 分类新闻	--	获取 国际 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_world_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 社会 分类新闻	--	获取 社会 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_society_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=news_
+获取 体育 分类新闻	--	获取 体育 分类新闻
+start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.sports.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=sports_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 财经 分类新闻	--	获取 财经 分类新闻
+start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.finance.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=finance_0_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 娱乐 分类新闻	--	获取 娱乐 分类新闻
+start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.ent.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=ent_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 科技 分类新闻	--	获取 科技 分类新闻
+start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.tech.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=tech_news_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+获取 军事 分类新闻	--	获取 军事 分类新闻
+start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_	--	start to fetch http://top.news.sina.com.cn/ws/GetTopDataList.php?top_type=day&top_cat=news_mil_suda&top_time=20171113&top_show_num=50&top_order=DESC&js_var=channel_
+爬取新浪网完毕，储存于 xinlang.rec 内	--	爬取新浪网完毕，储存于 xinlang.rec 内
+共获取新闻总数 679	--	共获取新闻总数 679
+Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 362, in start
+    for news in allInfo:
+RuntimeError: dictionary changed size during iteration
+	--	Traceback (most recent call last):
+  File "D:\学习资料\软件工程\大作业\NewsRecommendSystem\src\fetch_news.py", line 362, in start
+    for news in allInfo:
+RuntimeError: dictionary changed size during iteration
+

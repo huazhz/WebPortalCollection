@@ -97,17 +97,18 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
     neighbors = {}
     k = 0
     for neighbor,rate in All_neighbors.items():
+        # 去除相似度过低的邻居
+        if k == 21 or rate<0.2:
+            break
         neighbors[neighbor] = rate
         k += 1
-        if k == 20:
-            break
         
     #生成新闻推荐标签:
     #key:tag; value:score;     
     recommend_tag={}
     #现将用户自己现有的tag添加进去
-    for list in user_to_rate[userid]:
-        recommend_tag[list[0]] = int(list[1])
+    for List in user_to_rate[userid]:
+        recommend_tag[List[0]] = int(List[1])
     for neighbor in neighbors:
         tags=user_to_rate[neighbor]
         for tag in tags:
@@ -116,7 +117,7 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
                 recommend_tag[tag[0]] = 1
             else:
                 recommend_tag[tag[0]] += 0.05*neighbors[neighbor]
-    print(recommend_tag)
+    #print(recommend_tag)
     
     #用户圈新闻推荐
     user_recommend_news={}
@@ -137,12 +138,14 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
     user_recommend_news = sorted(user_recommend_news.items(), key = lambda x:x[1] , reverse=True)
     recommend_list_byUser = []
     for news in user_recommend_news:
-        recommend_list_byUser.append(news)    
+        recommend_list_byUser.append(list(news)[0])    
         
     #依照推荐tags生成初步新闻list
     #key:news; value:score            
     tag_recommend_news={}
     for news,tags in all_news.items():
+        if news in recommend_list_byUser or news in user_to_news[userID]:
+            continue
         for tag in tags:
             if tag in recommend_tag:
                 #给recommend_tag评分
@@ -154,7 +157,7 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
     tag_recommend_news = sorted( tag_recommend_news.items(), key = lambda x:x[1] , reverse=True)
     recommend_list_byTag = []
     for news in tag_recommend_news:
-        recommend_list_byTag.append(news)    
+        recommend_list_byTag.append(list(news)[0])    
     
     length = len(recommend_list_byUser)
     if length>=40:
@@ -164,14 +167,14 @@ def recommendByUserFC(userid,user_to_rate,key_to_user,user_to_key,user_to_news,a
         return mixedRecommend
 
 if __name__ == '__main__' :
-    userID = "5218791"
-    user_KeytoRate = {"5218791":[['马航',3],['马云',10],['彩虹六号',8]]}
-    user_to_news = {"5218791":['1','2','3']}
-    user_keys = {"5218791":['马航','马云','彩虹六号']}
-    key_users = {'马航':"5218791"}
-    news_to_tags = {"1":['iphone','手机']}
-    recommendNews_byUser,recommendNews_byTag = recommendByUserFC(userID,user_KeytoRate,key_users,user_keys,user_to_news,news_to_tags)
-    print(recommendNews_byUser)
-    print(recommendNews_byTag)
+    userID = "11"
+    user_KeytoRate = {"11":[['马航',3],['马云',10],['彩虹六号',8]],"22":[['马航',5],['手机',10],['彩虹六号',8]],
+                      "33":[["坦克",2],["舰娘",33]]}
+    user_to_news = {"11":['N1'],"22":['N1','N2','N3']}
+    user_keys = {"11":['马航','马云','彩虹六号'],"22":['马航','手机','彩虹六号'],"33":["坦克","舰娘"]}
+    key_users = {'马航':["11","22"],'马云':["11"],'彩虹六号':["11","22"],'手机':["22"]}
+    news_to_tags = {"N1":['iphone','手机'],"N2":['马航','失踪'],'N3':['彩虹六号','育碧','游戏'],'N4':['狗头人','爽哥','彩虹六号']}
+    mixRecommend = recommendByUserFC(userID,user_KeytoRate,key_users,user_keys,user_to_news,news_to_tags)
+    print(mixRecommend)
 
 
