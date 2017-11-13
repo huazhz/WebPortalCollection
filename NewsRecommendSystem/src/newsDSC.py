@@ -94,7 +94,7 @@ def set_or(set0, set1):
 # 默认同一个新闻源内部不会有重复或相似新闻
 # source1: {newsID:[title,num],...}
 def dropSimilarNews(source1,source2,path):
-    mergedList = []
+    mergedList = {}
     for news1,list1 in source1.items():
         title1 = list1[0]
         num1 = list1[1]
@@ -109,20 +109,33 @@ def dropSimilarNews(source1,source2,path):
                 #print(title2)
                 flag = 0
                 if num1 >= num2:
-                    mergedList.append(news1)
+                    mergedList[news1] = [title1,num1]
                     del source2[news2]
                 else:
-                    mergedList.append(news2)
+                    mergedList[news2] = [title2,num2]
                     del source2[news2]
                 break
         if flag == 1:
-            mergedList.append(news1)
+            mergedList[news1] = [title1,num1]
             
     # 添加剩余没重复的
-    for news2 in source2:
-        mergedList.append(news2)       
+    for news2,list2 in source2.items():
+        mergedList[news2] = [title2,num2]       
                 
     return mergedList
+
+
+# source = [source1,source2,source3,source4]
+def mergeAllSources(source,path):
+    merge1 = dropSimilarNews(source[0],source[1],path)
+    merge2 = dropSimilarNews(source[2],source[3],path)
+    dic = dropSimilarNews(merge1,merge2,path)
+    allmerged = []
+    for news in dic:
+        allmerged.append(news)
+    # 返回新闻url数组
+    return allmerged
+
 
 if __name__ == '__main__' :
     source1 = {}
@@ -141,8 +154,9 @@ if __name__ == '__main__' :
         title = info[2]
         num = int(info[3])
         source2[id] = [title,num]
+    source = [source1,source2,source1,source2]
     path = 'D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt'
     #source1 = {"1":["美国第一夫人登上长城 获赠“好汉证”",400],"2":["美俄互指对方违反《中导条约 分析：或陷入新冷战",500]}   
     #source2 = {"3":["美俄再次互怼 指对方违反《中导条约》",200],"4":["美第一夫人登长城顺利拿下“好汉证”",300]}
-    newslist = dropSimilarNews(source1, source2, path)
+    newslist = mergeAllSources(source,path)
     print(len(newslist))  
