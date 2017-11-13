@@ -1,31 +1,30 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 2017年10月17日
 
 @author: SunYawei
 '''
-#from set_util import *
-from pybloom import BloomFilter
+#from pybloom import BloomFilter
 import jieba
 from math import *
 import jieba.analyse
 
-def get_shingles(title):
-    jieba.analyse.set_stop_words('D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt')
+def get_shingles(title,path):
+    jieba.analyse.set_stop_words(path)
     seg = jieba.analyse.extract_tags(title,5)
     #seg = list(jieba.cut(title))
-    fr = open('D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt',encoding='utf-8')
+    fr = open(path,encoding='utf-8')
     stopw = [line.strip() for line in fr.readlines()]
     shingles = set(seg) - set(stopw) - set(" ")
     return shingles
 
 
-def cal_similar_degree(title0, title1):
-    shingles0 = get_shingles(title0)#计算doc的shingles
-    shingles1 = get_shingles(title1)
-    #求shingles0,shingles1的交集
-    #shingles01_and = set_and(shingles0, shingles1)
+def cal_similar_degree(title0, title1, path):
+    shingles0 = get_shingles(title0,path)#计算doc的shingles
+    shingles1 = get_shingles(title1,path)
     #求shingles0,shingles1的并集
-    shingles01_or = set_or(shingles0, shingles1)
+    shingles01_or = list(shingles0 | shingles1)
+    #shingles01_or = set_or(shingles0, shingles1)
     vector0 = []
     vector1 = []
     for word in shingles01_or:
@@ -50,6 +49,7 @@ def cal_similar_degree(title0, title1):
     #c10 = 1.0 * len(shingles01_and) / len(shingles1)#计算doc0对doc1的包含度
     return similar_rate
 
+'''
 #集合的与操作，求集合的交集
 def set_and(set0, set1):
     result_set = []
@@ -88,16 +88,12 @@ def set_or(set0, set1):
         if element not in bloom:
             result_set.append(element)#还没有存在，则加入到尾部
     return result_set
-
-
-doc0 = '习近平出席APEC峰会并发表主旨演讲'
-doc1 = '习近平主席在亚太经合组织工商领导人峰会上的主旨演讲'
-cal_similar_degree(doc0, doc1)
+'''
 
 
 # 默认同一个新闻源内部不会有重复或相似新闻
 # source1: {newsID:[title,num],...}
-def dropSimilarNews(source1,source2):
+def dropSimilarNews(source1,source2,path):
     mergedList = []
     for news1,list1 in source1.items():
         title1 = list1[0]
@@ -106,9 +102,11 @@ def dropSimilarNews(source1,source2):
         for news2,list2 in source2.items():
             title2 = list2[0]
             num2 = list2[1]
-            similar = cal_similar_degree(title1,title2)
-            if similar>=0.4:
-                print(similar)
+            similar = cal_similar_degree(title1,title2,path)
+            if similar>=0.5:
+                #print(similar)
+                #print(title1)
+                #print(title2)
                 flag = 0
                 if num1 >= num2:
                     mergedList.append(news1)
@@ -126,9 +124,25 @@ def dropSimilarNews(source1,source2):
                 
     return mergedList
 
-'''
-source1 = {"1":["美国第一夫人登上长城 获赠“好汉证”",400],"2":["美俄互指对方违反《中导条约 分析：或陷入新冷战",500]}   
-source2 = {"3":["美俄再次互怼 指对方违反《中导条约》",200],"4":["美第一夫人登长城顺利拿下“好汉证”",300]}
-list = dropSimilarNews(source1, source2)
-print(list)  
-'''
+if __name__ == '__main__' :
+    source1 = {}
+    source2 = {}
+    fr1 = open("fenghuang.rec",encoding='utf-8')
+    fr2 = open("tengxun.rec",encoding='utf-8')
+    for line in fr1.readlines():
+        info = line.split('<div/>')
+        id = info[1]
+        title = info[2]
+        num = int(info[3])
+        source1[id] = [title,num]
+    for line in fr2.readlines():
+        info = line.split('<div/>')
+        id = info[1]
+        title = info[2]
+        num = int(info[3])
+        source2[id] = [title,num]
+    path = 'D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt'
+    #source1 = {"1":["美国第一夫人登上长城 获赠“好汉证”",400],"2":["美俄互指对方违反《中导条约 分析：或陷入新冷战",500]}   
+    #source2 = {"3":["美俄再次互怼 指对方违反《中导条约》",200],"4":["美第一夫人登长城顺利拿下“好汉证”",300]}
+    newslist = dropSimilarNews(source1, source2, path)
+    print(len(newslist))  

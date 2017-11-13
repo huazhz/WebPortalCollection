@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #设置文件路径等参数
 train_set='D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\test\\train_date_set1.txt'
 test_root='D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\'

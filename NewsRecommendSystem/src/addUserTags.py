@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 '''
 Created on 2017年11月8日
 
@@ -9,7 +10,7 @@ import jieba.posseg as psg
 # userTags:{userID:[[tag1,rate1],[tag2,rate2],...]}
 # dayRecords:[day1,day2,..,day5]
 # day1:{userID:[title1,title2,...]} 
-def addUserTags(userTags,dayRecords):
+def addUserTags(userTags,dayRecords,path):
         
     # 生成用户5天历史字典       
     userRecords = {}
@@ -40,7 +41,7 @@ def addUserTags(userTags,dayRecords):
         newslist = ""
         for title in record:
             newslist += title + ','
-        jieba.analyse.set_stop_words('D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt')
+        jieba.analyse.set_stop_words(path)
         dayTags = jieba.analyse.extract_tags(newslist,5)
         print(dayTags)
         words = list(jieba.cut(newslist))
@@ -71,6 +72,7 @@ def addUserTags(userTags,dayRecords):
     return userTags
     
 if __name__ == '__main__' :
+    path = 'D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt'
     userTags = {'1150310718':[['彩虹六号',3],['马云',10],['淘宝',17],['手机',20]]}  
     dayRecords = [{'1150310718':['马云在双11赚了中国人很多钱','淘宝或将取代京东成为唯一电商']},{'1150310718':['马云在双11过后成为中国首富']},{'1150310718':['iphoneX成为淘宝最热门手机']},{'1150310718':[]},{'1150310718':['马云在双11赚了中国人很多钱','淘宝或将取代京东成为唯一电商','iphoneX成为淘宝最热门手机']}]
-    print(addUserTags(userTags,dayRecords))
+    print(addUserTags(userTags,dayRecords,path))
