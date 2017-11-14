@@ -1,0 +1,11 @@
+<litepal>
+    <dbname value ="news" />
+
+    <version value="3" />
+
+    <list>
+        <mapping class = "com.example.lumi.portalwebcollection.model.New" />
+        <mapping class = "com.example.lumi.portalwebcollection.model.User" />
+        <mapping class = "com.example.lumi.portalwebcollection.model.cookie" />
+    </list>
+</litepal>
