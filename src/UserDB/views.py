@@ -192,8 +192,6 @@ def change_tags(request):
             return HttpResponse(json.dumps(result), content_type='application/json')
         all_data = json.loads(request.body)
         p_user_name = request.session.get('user_name')
-        print p_user_name
-        print all_data['change_tags'].encode('utf-8')
         if p_user_name:
             change_kind_set = set(all_data['change_tags'].split('/'))
             change_kind_set = kind_item_set & change_kind_set
@@ -202,9 +200,6 @@ def change_tags(request):
                 p_kinds_set = set(p_kinds)
                 add_kind_list = list(change_kind_set - p_kinds_set)
                 delete_kind_list = list(p_kinds_set - change_kind_set)
-                print 'us tag'
-                print add_kind_list
-                print delete_kind_list
                 if add_kind_list:
                     add_kind = []
                     add_recommend = []
