@@ -10,6 +10,15 @@ public class New extends DataSupport{
     private int id;
     private String title;
     private String url;
+    private String imgurl;
+
+    public String getImgurl() {
+        return imgurl;
+    }
+
+    public void setImgurl(String imgurl) {
+        this.imgurl = imgurl;
+    }
 
     public int getId() {
         return id;

@@ -31,6 +31,7 @@ public class Utility {
                     news.setId(0);
                     news.setTitle(newObject.getString("title"));
                     news.setUrl(newObject.getString("url"));
+                    news.setImgurl(newObject.getString("imgurl"));
                     allnews.add(news);
                 }
                 return allnews;

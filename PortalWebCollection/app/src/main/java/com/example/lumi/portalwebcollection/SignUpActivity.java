@@ -85,6 +85,7 @@ public class SignUpActivity extends AppCompatActivity {
                 json.put("user_name", username);
                 json.put("password", pwd1);
                 Log.d("taggg", json.toString());
+                retcode = -999;
                 HttpUtil.sendOkHttpPost(url, json.toString(), new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
@@ -103,6 +104,10 @@ public class SignUpActivity extends AppCompatActivity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+            while(retcode == -999){
+                continue;
+            }
+
         }else{
             Toast.makeText(SignUpActivity.this, "密码不一致", Toast.LENGTH_SHORT).show();
         }

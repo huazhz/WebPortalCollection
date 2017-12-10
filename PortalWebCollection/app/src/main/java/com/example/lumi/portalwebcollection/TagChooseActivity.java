@@ -130,6 +130,7 @@ public class TagChooseActivity extends AppCompatActivity {
             json.put("change_tags", tags);
             json.put("user_name", username);
             String address = "http://47.95.215.167/change_tags/";
+            Retcode = -999;
             HttpUtil.sendOkHttpSession(address, json.toString(), new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
@@ -144,6 +145,9 @@ public class TagChooseActivity extends AppCompatActivity {
                     Retcode = Utility.handleSignResult(responseText);
                 }
             });
+            while(Retcode == -999){
+                continue;
+            }
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d("taggg", e.toString());

@@ -65,6 +65,7 @@ public class SignInActivity extends AppCompatActivity {
     public void login(String name, String pwd) {
         LoginName = name;
         LoginPwd = pwd;
+
         String address = "http://47.95.215.167/sign_in/";
         Log.d("login_username", LoginName);
         Log.d("login_password", LoginPwd);
@@ -72,6 +73,7 @@ public class SignInActivity extends AppCompatActivity {
         try {
             json.put("user_name",LoginName);
             json.put("password", LoginPwd);
+            RetCode = -999;
 
             HttpUtil.sendOkHttpSession(address, json.toString(), new Callback() {
                 @Override
@@ -104,6 +106,11 @@ public class SignInActivity extends AppCompatActivity {
                     }
                 }
             });
+
+            while(RetCode == -999){
+                continue;
+            }
+
         } catch (JSONException e) {
             e.printStackTrace();
             Log.d("taggg9", e.toString());

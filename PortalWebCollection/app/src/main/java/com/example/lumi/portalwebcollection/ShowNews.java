@@ -24,6 +24,7 @@ import com.example.lumi.portalwebcollection.model.New;
 import com.example.lumi.portalwebcollection.model.Tag;
 import com.example.lumi.portalwebcollection.model.User;
 import com.example.lumi.portalwebcollection.util.HttpUtil;
+import com.example.lumi.portalwebcollection.util.NewsAdapter;
 import com.example.lumi.portalwebcollection.util.Utility;
 
 import org.json.JSONException;
@@ -57,9 +58,10 @@ public class ShowNews extends Fragment {
 
     private ListView listView;
     private ListView typeView;
-    private ArrayAdapter<String> adapter;
+    private NewsAdapter adapter;
+//    private ArrayAdapter<String> adapter;
     private ArrayAdapter<String> adapter2;
-    private List<String> dataList = new ArrayList<>();
+    private List<New> dataList = new ArrayList<>();
     private List<String> typeList = new ArrayList<>();
 
     private List<New> newList;
@@ -92,7 +94,7 @@ public class ShowNews extends Fragment {
         listView = (ListView) view.findViewById(R.id.list_view);
         typeView = (ListView) view.findViewById(R.id.catagory_view);
         user = (Button) view.findViewById(R.id.user);
-        adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dataList);
+        adapter = new NewsAdapter(getContext(), R.layout.news_item, dataList);
         listView.setAdapter(adapter);
         init();
 
@@ -169,10 +171,6 @@ public class ShowNews extends Fragment {
                 Log.d("taggg2323", selectTag.getAddress());
                 address = "http://47.95.215.167/news/";
                 queryFromServer(address, selectTag.getKind());
-//                adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dataList);
-//                listView.setAdapter(adapter);
-//                adapter.notifyDataSetChanged();
-//                listView.setSelection(0);
                 mDrawerLayout.closeDrawer(Gravity.LEFT);
             }
         });
@@ -191,10 +189,6 @@ public class ShowNews extends Fragment {
             public void onClick(View v) {
                 address = "http://47.95.215.167/news/";
                 queryFromServer(address, "all");
-//                adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, dataList);
-//                listView.setAdapter(adapter);
-//                adapter.notifyDataSetChanged();
-//                listView.setSelection(0);
             }
         });
 
@@ -223,8 +217,6 @@ public class ShowNews extends Fragment {
 
         address = "http://47.95.215.167/news/";
         queryFromServer(address, "all");
-//        adapter.notifyDataSetChanged();
-//        listView.setSelection(0);
 
     }
 
@@ -248,7 +240,7 @@ public class ShowNews extends Fragment {
                                 closeProgerssDialog();
                                 dataList.clear();
                                 for (New news : newList){
-                                    dataList.add(news.getTitle());
+                                    dataList.add(news);
                                 }
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
@@ -324,7 +316,7 @@ public class ShowNews extends Fragment {
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
                                 for (New news : newList){
-                                    dataList.add(news.getTitle());
+                                    dataList.add(news);
                                     Log.d("taggg", news.getTitle());
                                 }
                                 adapter.notifyDataSetChanged();
@@ -374,7 +366,7 @@ public class ShowNews extends Fragment {
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
                                 for (New news : newList){
-                                    dataList.add(news.getTitle());
+                                    dataList.add(news);
                                     Log.d("taggg", news.getTitle());
                                 }
                                 adapter.notifyDataSetChanged();
