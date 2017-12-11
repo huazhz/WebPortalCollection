@@ -21,11 +21,8 @@ def get_shingles(title,path):
 def cal_similar_degree(title0, title1, path):
     shingles0 = title0
     shingles1 = title1
-    #shingles0 = get_shingles(title0,path)
-    #shingles1 = get_shingles(title1,path)
     #求shingles0,shingles1的并集
     shingles01_or = list(shingles0 | shingles1)
-    #shingles01_or = set_or(shingles0, shingles1)
     vector0 = []
     vector1 = []
     for word in shingles01_or:
@@ -46,8 +43,6 @@ def cal_similar_degree(title0, title1, path):
         xSum += vector0[i]
         ySum += vector1[i]
     similar_rate = x_and_y/sqrt(xSum*ySum)    
-    #c01 = 1.0 * len(shingles01_and) / len(shingles0)#计算doc0对doc1的包含度
-    #c10 = 1.0 * len(shingles01_and) / len(shingles1)#计算doc0对doc1的包含度
     return similar_rate
 
 '''

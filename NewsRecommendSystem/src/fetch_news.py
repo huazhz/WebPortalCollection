@@ -188,8 +188,15 @@ class NewsSpider:
                 news_title = news_a.text.strip()
                 news_weight = int(t_table[i].find('./td[3]').text)
                 news_date = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+                #爬取图片url
+                pic_html = requests.get(news_url).text
+                newsPic = re.findall('<meta property="og:image" content="(.*?)"',pic_html)
+                if newsPic == [] or newsPic[0] == '':
+                    pic_url = "null"
+                else:
+                    pic_url = newsPic[0]
                 if news_url not in news_dict:
-                    news_dict[news_url] = '%s<div/>%s<div/>%s<div/>%d<div/>%s\n' % (t_kind, news_url, news_title, news_weight, news_date)
+                    news_dict[news_url] = '%s<div/>%s<div/>%s<div/>%d<div/>%s<div/>%s\n' % (t_kind, news_url, news_title, news_weight, news_date, pic_url)
         echo(self.log_f, '爬取凤凰网完毕，储存于 fenghuang.rec 内')
         news_lines = news_dict.values()
         with open(os.path.join(self.to_dir, 'fenghuang.rec'), 'wb') as fenghuang_f:
@@ -205,6 +212,11 @@ class NewsSpider:
             echo(self.log_f, '获取 %s 分类新闻' % t_kind)
             t_ul = page_html.xpath(t_xpath)
             for i in range(len(t_ul)):
+                news_pic = t_ul[i].find('.//a[@class="pic"]/img')
+                if news_pic is not None:
+                    pic_url = news_pic.get('src')
+                else:
+                    pic_url = 'null'
                 news_a = t_ul[i].find('.//div[@class="info"]/p/a')
                 news_url = news_a.get('href')
                 news_title = news_a.text.strip()
@@ -234,8 +246,15 @@ class NewsSpider:
                     news_title = news_a.text.strip()
                     news_weight = int(t_table[j].find('./td[2]').text)
                     news_date = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+                    #爬取图片url
+                    pic_html = requests.get(news_url).text
+                    newsPic = re.findall('<img alt="(.*?)" src="(.*?)"',pic_html)
+                    if newsPic == []:
+                        pic_url = "null"
+                    else:
+                        pic_url = list(newsPic[0])[1]
                     if news_url not in news_dict:
-                        news_dict[news_url] = '%s<div/>%s<div/>%s<div/>%d<div/>%s\n' % (t_kind, news_url, news_title, news_weight, news_date)
+                        news_dict[news_url] = '%s<div/>%s<div/>%s<div/>%d<div/>%s<div/>%s\n' % (t_kind, news_url, news_title, news_weight, news_date, pic_url)
         echo(self.log_f, '爬取网易网完毕，储存于 wangyi.rec 内')
         news_lines = news_dict.values()
         with open(os.path.join(self.to_dir, 'wangyi.rec'), 'wb') as wangyi_f:
@@ -268,12 +287,19 @@ class NewsSpider:
                         raise Exception('no content error')
             for news_info in news_list:
                 if stop_time <= news_info['create_date']:
-                    news_url = news_info['url'].encode('utf-8')
+                    news_url = news_info['url']
                     news_title = news_info['title'].strip()
                     news_weight = int(re.sub(u',', '', news_info['top_num']))
                     news_date = time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time()))
+                    #爬取图片url
+                    pic_html = requests.get(news_url).text
+                    newsPic = re.findall('<img src="(.*?)"',pic_html)
+                    if newsPic == [] or newsPic[1] == '':
+                        pic_url = "null"
+                    else:
+                        pic_url = newsPic[1]
                     if news_url not in news_dict:
-                        news_dict[news_url] = '%s<div/>%s<div/>%s<div/>%d<div/>%s\n' % (t_kind, news_url, news_title, news_weight, news_date)
+                        news_dict[news_url] = '%s<div/>%s<div/>%s<div/>%d<div/>%s<div/>%s\n' % (t_kind, news_url, news_title, news_weight, news_date, pic_url)
         echo(self.log_f, '爬取新浪网完毕，储存于 xinlang.rec 内')
         news_lines = news_dict.values()
         with open(os.path.join(self.to_dir, 'xinlang.rec'), 'wb') as xinlang_f:
@@ -295,11 +321,11 @@ class NewsSpider:
             # xinlang.rec
             # 要打印信息请用echo(self.log_f, '')
             ######
-            path = 'D:\\学习资料\\软件工程\\大作业\\NewsRecommendSystem\\stopword.txt'
-            fr1 = open("fenghuang.rec",encoding='utf-8')
-            fr2 = open("tengxun.rec",encoding='utf-8')
-            fr3 = open("wangyi.rec",encoding='utf-8')
-            fr4 = open("xinlang.rec",encoding='utf-8')
+            path = 'stopword.txt'
+            fr1 = open(os.path.join(self.to_dir, 'fenghuang.rec'),encoding='utf-8')
+            fr2 = open(os.path.join(self.to_dir, 'tengxun.rec'),encoding='utf-8')
+            fr3 = open(os.path.join(self.to_dir, 'wangyi.rec'),encoding='utf-8')
+            fr4 = open(os.path.join(self.to_dir, 'xinlang.rec'),encoding='utf-8')
             source1 = {}
             source2 = {}
             source3 = {}
@@ -312,11 +338,12 @@ class NewsSpider:
                 title = info[2]
                 num = int(info[3])
                 time = info[4]
+                pic = info[5]
                 data = time.split(' ')[0]
                 tags = getTags(title, path)
                 rate = get_NewsRate(num, time)
                 source1[id] = [tags,num]
-                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'data':data}            
+                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'date':data, 'pic':pic}            
             for line in fr2.readlines():
                 info = line.split('<div/>')
                 kind = info[0]
@@ -324,11 +351,12 @@ class NewsSpider:
                 title = info[2]
                 num = int(info[3])
                 time = info[4]
+                pic = info[5]
                 data = time.split(' ')[0]
                 tags = getTags(title, path)
                 rate = get_NewsRate(num, time)
                 source2[id] = [tags,num]
-                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'data':data}
+                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'date':data,'pic':pic}
             for line in fr3.readlines():
                 info = line.split('<div/>')
                 kind = info[0]
@@ -336,11 +364,12 @@ class NewsSpider:
                 title = info[2]
                 num = int(info[3])
                 time = info[4]
+                pic = info[5]
                 data = time.split(' ')[0]
                 tags = getTags(title, path)
                 rate = get_NewsRate(num, time)
                 source3[id] = [tags,num]
-                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'data':data}
+                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'date':data,'pic':pic}
             for line in fr4.readlines():
                 info = line.split('<div/>')
                 kind = info[0]
@@ -348,11 +377,12 @@ class NewsSpider:
                 title = info[2]
                 num = int(info[3])
                 time = info[4]
+                pic = info[5]
                 data = time.split(' ')[0]
                 tags = getTags(title, path)
                 rate = get_NewsRate(num, time)
                 source4[id] = [tags,num]
-                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'data':data}
+                allInfo[id] = {'title':title,'url':id,'kind':kind,'hot_rate':rate,'date':data,'pic':pic}
             source = [source1,source2,source3,source4]
             # 汇总新闻url数组
             allNews = mergeAllSources(source,path)
@@ -367,8 +397,33 @@ class NewsSpider:
             for news,info in allInfo.items():
                 newsTitle[news] = info['title']
             
-            newsLimitedTags = get_SearchTags(newsTitle)
-            newsSearchTags = get_newstag(newsTitle, path)
+            newsSearchTags = get_SearchTags(newsTitle)
+            newsLimitedTags = get_newstag(newsTitle, path)
+
+            echo(self.log_f, '获取%d条新闻' % len(mergedTable))
+
+            post_data = {
+                'News': mergedTable,
+                'NewsToLimitTags': newsLimitedTags,
+                'NewsToTags': newsSearchTags,
+                'pwd': 'meng835542226',
+            }
+
+            re_t = 0
+            while True:
+                try:
+                    resp = requests.post('http://47.95.215.167/insert_news/', data=json.dumps(post_data))
+                    print(resp.content)
+                    r = json.loads(resp.content)
+                    if r['retcode'] == 0:
+                        break
+                    re_t += 1
+                    if re_t > 5:
+                        raise Exception('requests error')
+                except:
+                    re_t += 1
+                    if re_t > 5:
+                        raise Exception('requests error')
 
             self.exit_code = 1000
         except:
