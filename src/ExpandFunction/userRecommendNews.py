@@ -12,15 +12,17 @@ import userFC
 def recommendNews(news_rate,news_kind,user_kind,user_TagtoRate,tag_user,user_tag,userRecord,news_tag):
     user_news = {}
     for userID,kinds in user_kind.items():
-        tags = []
-        if userID in user_tag:
+        # 判断user_tag里是否有此用户
+        if userID not in user_tag.keys:
+            tags = []
+        else:
             tags = user_tag[userID]
         recommend_News = {}
         for kind in kinds:
             recommend_News[kind] = []
             
         # 新用户关键词过少，利用种类推荐           
-        if len(tags)<10:
+        if len(tags)<20 and len(kinds)!=0:
             for news,kind in news_kind.items():
                 if kind in kinds and news not in userRecord[userID]:
                     recommend_News[kind] += news                    

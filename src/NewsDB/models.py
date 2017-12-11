@@ -13,6 +13,7 @@ class News(models.Model):
     kind = models.CharField(max_length=50)
     hot_rate = models.FloatField()
     date = models.CharField(max_length=10)
+    img_url = models.CharField(max_length=300)
     
     def __unicode__(self):
         return self.url
@@ -24,6 +25,7 @@ class News(models.Model):
             'kind': self.kind,
             'hot_rate': self.hot_rate,
             'date': self.date,
+            'img_url': self.img_url
         }
 
     

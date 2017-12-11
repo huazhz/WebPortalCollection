@@ -18,7 +18,7 @@ TMP_DIR = os.path.join(BASE_DIR, 'temp')
 
 
 # 数据准备
-news_item = ['title', 'url', 'kind', 'hot_rate', 'date']
+news_item = ['title', 'url', 'kind', 'hot_rate', 'date', 'img_url']
 
 pattern_news_dict = {
     'title': r'^.{1,100}$',
@@ -26,6 +26,7 @@ pattern_news_dict = {
     'kind': r'^.{1,50}$',
     'hot_rate': r'^[.0-9]{1,50}$',
     'date': r'^[0-9]{4}-[0-9]{2}-[0-9]{2}$',
+    'img_url': r'^.{0,300}$',
 }
 
 kind_item = [
@@ -85,14 +86,25 @@ def insert_news(request):
                 save_list = []
                 limit_list = []
                 unlimit_list = []
+                ac_insert = []
                 for url, news in news_dict.iteritems():
                     if url != news['url']:
                         continue
                     re_flag = True
                     for i in xrange(len(news_item)):
-                        if not re.match(pattern_news_dict[news_item[i]], news[news_item[i]]):
-                            re_flag = False
-                            break
+                        if news_item[i] != 'hot_rate':
+                            if not re.match(pattern_news_dict[news_item[i]], news[news_item[i]]):
+                                re_flag = False
+                                break
+                        else:
+                            try:
+                                hot_str = str(news['hot_rate'])
+                                if not re.match(pattern_news_dict['hot_rate'], hot_str):
+                                    re_flag = False
+                                    break
+                            except:
+                                re_flag = False
+                                break
                         
                     if re_flag:
                         re_flag = check_date(news['date'])
@@ -110,9 +122,13 @@ def insert_news(request):
                             url=news['url'],
                             kind=news['kind'],
                             hot_rate=news['hot_rate'],
-                            date=news['date']
+                            date=news['date'],
+                            img_url=news['img_url']
                         ))
+                        ac_insert.append(news['url'])
                 for t_url, t_tag_list in news_limit_tags.iteritems():
+                    if t_url not in ac_insert:
+                        continue
                     if not re.match(pattern_news_dict['url'], t_url):
                         continue
                     for t_tag in t_tag_list:
@@ -125,6 +141,8 @@ def insert_news(request):
                             )
                         )
                 for t_url, t_tag_list in news_tags.iteritems():
+                    if t_url not in ac_insert:
+                        continue
                     if not re.match(pattern_news_dict['url'], t_url):
                         continue
                     for t_tag in t_tag_list:
