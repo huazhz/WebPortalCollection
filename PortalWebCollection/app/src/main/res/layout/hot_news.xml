@@ -16,38 +16,42 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
         android:orientation="horizontal">
         <Button
             android:id="@+id/user"
-            android:layout_weight="2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            style="?android:attr/borderlessButtonStyle"
+            />
         <Button
             android:id="@+id/hot_news"
-            android:layout_weight="3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/hot_news"
             android:text="热点新闻" />
         <Button
             android:id="@+id/recommend_news"
-            android:layout_weight="3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            style="@style/rec_news"
             android:text="推荐新闻" />
         <Button
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:id="@+id/search_button"
-            android:text="搜索" />
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/search_icon" />
 
     </LinearLayout>
 
     <ListView
         android:id="@+id/list_view"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="1"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/more_news"
+            android:text="看完了"/>
     </LinearLayout>
 
     <LinearLayout
@@ -62,7 +66,9 @@
         <ListView
             android:id="@+id/catagory_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
+
+
     </LinearLayout>
 
     <LinearLayout

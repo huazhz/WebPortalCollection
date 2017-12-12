@@ -38,15 +38,18 @@ public class UserActivity extends AppCompatActivity {
         Button signIn = (Button) findViewById(R.id.sign_in);
         Button signUp = (Button) findViewById(R.id.sign_up);
         Button signOut = (Button) findViewById(R.id.sign_out);
+        Button changeTags = (Button) findViewById(R.id.change_tags);
 
         if(user.getNick_name() != null){
             currentUser.setText("当前用户:"+user.getNick_name());
             signOut.setVisibility(View.VISIBLE);
             signIn.setVisibility(View.GONE);
             signUp.setVisibility(View.VISIBLE);
+            changeTags.setVisibility(View.VISIBLE);
         }else{
             currentUser.setText("当前无用户登录");
             signOut.setVisibility(View.GONE);
+            changeTags.setVisibility(View.GONE);
             signIn.setVisibility(View.VISIBLE);
             signUp.setVisibility(View.VISIBLE);
         }
@@ -96,6 +99,15 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(UserActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        changeTags.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserActivity.this, TagChooseActivity.class);
+                intent.putExtra("username", user.getUser_name());
                 startActivity(intent);
             }
         });

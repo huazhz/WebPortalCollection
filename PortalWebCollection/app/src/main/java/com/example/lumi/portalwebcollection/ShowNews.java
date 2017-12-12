@@ -53,6 +53,7 @@ public class ShowNews extends Fragment {
     private Button recommend;
     private Button searchButton;
     private Button search;
+    private Button morenews;
 
     private EditText searchText;
 
@@ -71,6 +72,10 @@ public class ShowNews extends Fragment {
     private List<Tag> tagList;
     private Tag selectTag;
     private String address;
+    private String currentTag;
+    private int currentHead;
+    private String queryStr;
+    private int waitFlag;
 
     private String[] mVals = {"资讯", "军事", "体育", "娱乐", "时政",
             "国际","财经", "时尚", "汽车","房产","游戏","社会","教育","旅游","科技"};
@@ -86,6 +91,8 @@ public class ShowNews extends Fragment {
         mDrawerLayout = (DrawerLayout) view.findViewById(R.id.drawer_layout);
         mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED, Gravity.RIGHT);
 
+        currentHead = 0;
+
         search = (Button) view.findViewById(R.id.search);
         searchText = (EditText) view.findViewById(R.id.search_text);
         hot = (Button) view.findViewById(R.id.hot_news);
@@ -94,19 +101,20 @@ public class ShowNews extends Fragment {
         listView = (ListView) view.findViewById(R.id.list_view);
         typeView = (ListView) view.findViewById(R.id.catagory_view);
         user = (Button) view.findViewById(R.id.user);
+        morenews = (Button) view.findViewById(R.id.more_news);
         adapter = new NewsAdapter(getContext(), R.layout.news_item, dataList);
         listView.setAdapter(adapter);
         init();
 
         userList = DataSupport.where("state = ?", String.valueOf(1)).find(User.class);
-        if(userList.size() != 1){
+        if(userList.size() == 0){
             current_user = new User();
             user.setText("登录/注册");
-            Log.d("taggg", String.valueOf(userList.size()));
+            Log.d("main", String.valueOf(userList.size()));
         }else{
             current_user = userList.get(0);
             user.setText(current_user.getNick_name());
-            Log.d("taggg", current_user.getNick_name());
+            Log.d("main", current_user.getNick_name());
         }
         return view;
     }
@@ -167,11 +175,31 @@ public class ShowNews extends Fragment {
         typeView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                morenews.setVisibility(View.VISIBLE);
+                hot.setEnabled(true);
+                recommend.setEnabled(true);
                 selectTag = tagList.get(position);
                 Log.d("taggg2323", selectTag.getAddress());
                 address = "http://47.95.215.167/news/";
-                queryFromServer(address, selectTag.getKind());
+                queryFromServer(address, selectTag.getKind(), 0, 10);
+                currentHead = 0;
+                currentTag = selectTag.getKind();
                 mDrawerLayout.closeDrawer(Gravity.LEFT);
+            }
+        });
+
+        morenews.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(currentTag.equals("query")){
+                    address = "http://47.95.215.167/query/";
+                    currentHead += 1;
+                    StartSearch(address, queryStr, 0+currentHead*10, 0+currentHead*10+10);
+                }else{
+                    address = "http://47.95.215.167/news/";
+                    currentHead += 1;
+                    queryFromServer(address, currentTag, 0+currentHead*10, 0+currentHead*10+10);
+                }
             }
         });
 
@@ -187,8 +215,14 @@ public class ShowNews extends Fragment {
         hot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(hot.isEnabled()){
+                    hot.setEnabled(false);
+                    recommend.setEnabled(true);
+                }
+                morenews.setVisibility(View.VISIBLE);
                 address = "http://47.95.215.167/news/";
-                queryFromServer(address, "all");
+                queryFromServer(address, "all", 0, 10);
+                currentHead = 0;
             }
         });
 
@@ -196,6 +230,11 @@ public class ShowNews extends Fragment {
             @Override
             public void onClick(View v) {
                 if(current_user.getUser_name() != null){
+                    if(recommend.isEnabled()){
+                        recommend.setEnabled(false);
+                        hot.setEnabled(true);
+                    }
+                    morenews.setVisibility(View.GONE);
                     address = "http://47.95.215.167/recommend/";
                     queryRecommendFromServer(address, "news");
                 }else{
@@ -207,22 +246,24 @@ public class ShowNews extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String query = searchText.getText().toString();
-                Log.d("taggg3232", query);
+                morenews.setVisibility(View.VISIBLE);
+                queryStr = searchText.getText().toString();
+                Log.d("taggg3232", queryStr);
                 address = "http://47.95.215.167/query/";
-                StartSearch(address, query);
                 mDrawerLayout.closeDrawer(Gravity.RIGHT);
+                StartSearch(address, queryStr, 0, 10);
+                currentHead = 0;
+                currentTag = "query";
+
             }
         });
-
-        address = "http://47.95.215.167/news/";
-        queryFromServer(address, "all");
-
+        hot.performClick();
     }
 
     private void queryRecommendFromServer(String address, String news) {
         showProgressDialog();
         JSONObject json = new JSONObject();
+        waitFlag = 1;
         try {
             json.put("user_name", current_user.getUser_name());
             HttpUtil.sendOkHttpSession(address,json.toString(), new Callback() {
@@ -230,20 +271,23 @@ public class ShowNews extends Fragment {
                 public void onResponse(Call call, Response response) throws IOException {
                     String responseText = response.body().string();
                     newList = Utility.handleNewResponse(responseText);
-                    Log.d("taggg", "oasdfaf");
+                    Log.d("rec", "oasdfaf");
 //                    closeProgerssDialog();
                     if(newList != null){
-                        Log.d("taggg", "ddddd");
+                        Log.d("rec", "ddddd");
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                closeProgerssDialog();
+
                                 dataList.clear();
                                 for (New news : newList){
                                     dataList.add(news);
+                                    Log.d("rec:", news.getTitle());
                                 }
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
+                                closeProgerssDialog();
+                                waitFlag = 0;
                             }
                         });
                     }
@@ -259,6 +303,7 @@ public class ShowNews extends Fragment {
                         @Override
                         public void run() {
                             closeProgerssDialog();
+                            waitFlag = 0;
                             Toast.makeText(getContext(), "加载失败", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -292,35 +337,40 @@ public class ShowNews extends Fragment {
         }
     }
 
-    private void StartSearch(String address, String query) {
+    private void StartSearch(String address, String query, int head, int tail) {
         showProgressDialog();
         JSONObject json = new JSONObject();
         try {
             json.put("query", query);
-            json.put("head", 0);
-            json.put("tail", 100);
+            json.put("head", head);
+            json.put("tail", tail);
             HttpUtil.sendOkHttpPost(address,json.toString(), new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     String responseText = response.body().string();
                     newList = Utility.handleNewResponse(responseText);
-                    Log.d("taggg", "oasdfaf");
+                    Log.d("search", "oasdfaf");
 //                    closeProgerssDialog();
                     if(newList != null){
-                        Log.d("taggg", "ddddd");
+                        Log.d("search", "ddddd");
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                            closeProgerssDialog();
                                 dataList.clear();
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
                                 for (New news : newList){
                                     dataList.add(news);
-                                    Log.d("taggg", news.getTitle());
+                                    Log.d("search", news.getTitle());
+                                    Log.d("search", news.getImgurl());
                                 }
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
+                                closeProgerssDialog();
+                                if(dataList.size() == 0){
+                                    morenews.setVisibility(View.GONE);
+                                    Toast.makeText(getContext(), "没有了", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
                     }
@@ -342,37 +392,42 @@ public class ShowNews extends Fragment {
         }
     }
 
-    private void queryFromServer(String address, final String type) {
+    private void queryFromServer(String address, final String type, int head, int tail) {
         showProgressDialog();
         JSONObject json = new JSONObject();
         try {
             json.put("kind", type);
-            json.put("head", 0);
-            json.put("tail", 100);
+            json.put("head", head);
+            json.put("tail", tail);
             HttpUtil.sendOkHttpPost(address,json.toString(), new Callback() {
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
                     String responseText = response.body().string();
                     newList = Utility.handleNewResponse(responseText);
-                    Log.d("taggg", "oasdfaf");
-//                    closeProgerssDialog();
+                    Log.d("query", "6677676");
                     if(newList != null){
-                        Log.d("taggg", "ddddd");
+                        Log.d("query", "ddddd");
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                            closeProgerssDialog();
                                 dataList.clear();
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
                                 for (New news : newList){
                                     dataList.add(news);
-                                    Log.d("taggg", news.getTitle());
+                                    Log.d("query", news.getTitle());
                                 }
                                 adapter.notifyDataSetChanged();
                                 listView.setSelection(0);
+                                closeProgerssDialog();
+                                if(dataList.size() == 0){
+                                    morenews.setVisibility(View.GONE);
+                                    Toast.makeText(getContext(), "没有了", Toast.LENGTH_SHORT).show();
+                                }
                             }
                         });
+                    }else{
+                        Log.d("query", "null");
                     }
                 }
 
@@ -387,6 +442,7 @@ public class ShowNews extends Fragment {
                     });
                 }
             });
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -56,10 +56,13 @@ public class SignUpActivity extends AppCompatActivity {
                         Toast.makeText(SignUpActivity.this, "用户名已存在", Toast.LENGTH_SHORT).show();
                     }
                     else if(retcode == 0){
-                        Log.d("taggg", "ok");
+                        Log.d("signup", "ok");
                         SignInActivity Login = new SignInActivity();
                         Login.login(username, pwd1);
-                        Log.d("tagggg4", "123");
+                        while(Login.getRetCode() == -999){
+                            continue;
+                        }
+                        Log.d("signup", "123");
 
                         Intent intent = new Intent(SignUpActivity.this, TagChooseActivity.class);
                         intent.putExtra("username", username);
@@ -84,7 +87,7 @@ public class SignUpActivity extends AppCompatActivity {
                 json.put("nick_name", nickname);
                 json.put("user_name", username);
                 json.put("password", pwd1);
-                Log.d("taggg", json.toString());
+                Log.d("signup", json.toString());
                 retcode = -999;
                 HttpUtil.sendOkHttpPost(url, json.toString(), new Callback() {
                     @Override
@@ -96,8 +99,7 @@ public class SignUpActivity extends AppCompatActivity {
                     public void onResponse(Call call, Response response) throws IOException {
                         String responseText = response.body().string();
                         retcode = Utility.handleSignResult(responseText);
-                        Log.d("taggg", String.valueOf(retcode));
-                        Log.d("taggg", String.valueOf(retcode));
+                        Log.d("signup", String.valueOf(retcode));
 
                     }
                 });
@@ -107,7 +109,7 @@ public class SignUpActivity extends AppCompatActivity {
             while(retcode == -999){
                 continue;
             }
-
+            Log.d("signup", String.valueOf(retcode));
         }else{
             Toast.makeText(SignUpActivity.this, "密码不一致", Toast.LENGTH_SHORT).show();
         }

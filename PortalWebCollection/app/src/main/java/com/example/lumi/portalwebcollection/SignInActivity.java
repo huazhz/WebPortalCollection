@@ -31,6 +31,10 @@ public class SignInActivity extends AppCompatActivity {
     private String LoginPwd;
     private int RetCode;
 
+    public int getRetCode() {
+        return RetCode;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +49,15 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View v) {
                 final String name = signName.getText().toString();
                 final String pwd = signPwd.getText().toString();
-                Log.d("taggg6", name);
-                Log.d("taggg6", pwd);
+                Log.d("login", name);
+                Log.d("login", pwd);
                 login(name, pwd);
+                Log.d("login", "retok");
+                Log.d("login", String.valueOf(RetCode));
                 if(RetCode == 403){
                     Toast.makeText(SignInActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
                 }
-                else if(RetCode == 100){
+                else if(RetCode == 0){
 
                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                     startActivity(intent);
@@ -88,21 +94,20 @@ public class SignInActivity extends AppCompatActivity {
 
                     if (res != null){
                         String errmsg = res.getErrmeg();
-                        Log.d("taggg6", errmsg);
+                        Log.d("login", errmsg);
                         RetCode = res.getRetcode();
-                        Log.d("taggg", String.valueOf(res.getNick_name()));
+                        Log.d("login", String.valueOf(res.getNick_name()));
                         if(RetCode == 0){
-                            Log.d("taggg", "oklogin");
+                            Log.d("login", "oklogin");
                             User currentUser = new User();
                             currentUser.setNick_name(res.getNick_name());
                             currentUser.setUser_name(LoginName);
                             currentUser.setState(1);
                             currentUser.setPassword(LoginPwd);
                             currentUser.save();
-                            RetCode = 100;
                         }
                     } else{
-                        Log.d("taggg7", responseText);
+                        Log.d("login", responseText);
                     }
                 }
             });
@@ -113,7 +118,7 @@ public class SignInActivity extends AppCompatActivity {
 
         } catch (JSONException e) {
             e.printStackTrace();
-            Log.d("taggg9", e.toString());
+            Log.d("login", e.toString());
         }
     }
 }

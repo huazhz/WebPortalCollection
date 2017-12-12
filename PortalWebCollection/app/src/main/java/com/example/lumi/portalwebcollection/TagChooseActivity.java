@@ -116,6 +116,7 @@ public class TagChooseActivity extends AppCompatActivity {
                 Log.d("change_tags", tags);
                 sendtags(tags);
                 if(Retcode == 0){
+
                     Intent intent = new Intent(TagChooseActivity.this, MainActivity.class);
                     startActivity(intent);
                 }

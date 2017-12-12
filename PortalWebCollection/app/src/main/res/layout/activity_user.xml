@@ -30,4 +30,10 @@
         android:text="退出登录"
         android:id="@+id/sign_out"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改标签"
+        android:id="@+id/change_tags"/>
+
 </LinearLayout>

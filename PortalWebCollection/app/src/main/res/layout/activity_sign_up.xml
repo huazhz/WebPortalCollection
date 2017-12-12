@@ -30,6 +30,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:id="@+id/sign_up_pwd1"/>
     <TextView
         android:layout_width="match_parent"
@@ -38,6 +39,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:id="@+id/sign_up_pwd2"/>
 
     <Button
