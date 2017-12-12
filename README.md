@@ -1,2 +1,2 @@
-# WebPortalCollection
-门户网站整和APP
+# NewsServer
+新闻服务器后台
