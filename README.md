@@ -1,2 +1,2 @@
-# NewsServer
-新闻服务器后台
+# WebPortal Collection
+门户网站整合
